@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 import { LanguageEnum } from '@/common/model'
 
 /**
@@ -38,12 +38,13 @@ export const getOSName = (): 'mac' | 'win' | 'linux' | null => {
 export const getRegionByIP = async (): Promise<'CN' | 'HK' | 'TW' | 'SG' | 'US'> => {
   try {
     // 获取 IP 地址
-    const res = await axios.get('https://api.ipify.org?format=json')
+    // const res = await axios.get('https://api.ipify.org?format=json')
 
     // 调用 ipapi.co 查询 IP 所在的地区或国家
-    const res2 = await axios.get(`https://ipapi.co/${res.data.ip}/country/`)
+    // const res2 = await axios.get(`https://ipapi.co/${res.data.ip}/country/`)
 
-    return Promise.resolve(res2.data)
+    // return Promise.resolve(res2.data)
+    return Promise.resolve('TW')
   } catch (error) {
     return Promise.resolve('CN')
   }

@@ -106,7 +106,7 @@ const initGlobalSettings = (): GlobalSettingsModel => {
     showAnnouncement: true,
     folded: false,
     elementPlusSize: ElementPlusSizeEnum.default,
-    language: LanguageEnum.zhCN,
+    language: LanguageEnum.zhTW,
     languageToggleTip: true,
     theme: ThemeModeEnum.system,
     useCloudSettings: false

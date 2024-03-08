@@ -12,7 +12,7 @@ import zhTW from 'element-plus/lib/locale/lang/zh-tw'
 import en from 'element-plus/lib/locale/lang/en'
 import setThemeMode from '@/utils/set-theme-mode'
 import { useStore } from '@/stores'
-import { getLanguageByRegion, getRegionByIP, setWindowTitle, throttle } from '@/utils'
+import { /* getLanguageByRegion, getRegionByIP, */ setWindowTitle, throttle } from '@/utils'
 import { ElementPlusSizeEnum, LanguageEnum } from '@/common/model'
 import MainContainer from '@/views/main-container/main-container.vue'
 import router from '@/router'
@@ -57,13 +57,13 @@ const setLanguage = (language: LanguageEnum) => {
     elementPlusLocale.value = en
     instance!.proxy!.$i18n.locale = 'en'
   } else {
-    elementPlusLocale.value = zhCN
-    instance!.proxy!.$i18n.locale = 'zh-CN'
+    elementPlusLocale.value = zhTW
+    instance!.proxy!.$i18n.locale = 'zh-TW'
   }
   setWindowTitle(router.currentRoute.value.meta.title as string)
 }
 
-const setLanguageByIP = () => {
+/* const setLanguageByIP = () => {
   if (!store.getters.getGlobalSettings.languageToggleTip) {
     return
   }
@@ -109,14 +109,14 @@ const setLanguageByIP = () => {
         })
     }
   })
-}
+} */
 
 const initSetLanguage = () => {
   // 初始化设置
   setLanguage(globalSettings.language)
 
   // 根据 IP 自动设置
-  setLanguageByIP()
+  // setLanguageByIP()
 }
 
 const init = () => {
